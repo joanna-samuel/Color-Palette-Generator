@@ -1,0 +1,146 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 24px;
+}
+
+/* Controls container */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 720px;
+}
+.controls > * {
+  flex: 1 1 auto;
+  min-width: 140px;
+  max-width: 200px;
+}
+
+
+input[type="color"] {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+button {
+  background-color: #444;
+  color: #eee;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #666;
+  color: white;
+}
+
+/* Palette container */
+#palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+  max-width: 720px;
+}
+
+/* Each color box */
+.swatch {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+.swatch-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.color-code {
+  font-weight: 600;
+  font-size: 1.1rem;
+  user-select: text;
+}
+.contrast-info {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+/* Buttons inside swatches */
+.lock-btn,
+.remove-btn {
+  position: absolute;
+  top: 8px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+.lock-btn {
+  right: 8px;
+}
+.remove-btn {
+  left: 8px;
+}
+.lock-btn:hover,
+.remove-btn:hover {
+  color: #ddd;
+}
+
+@media (max-width: 480px) {
+  .swatch {
+    width: 110px;
+    height: 110px;
+  }
+}
